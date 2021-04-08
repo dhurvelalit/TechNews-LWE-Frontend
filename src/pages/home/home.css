@@ -1,0 +1,121 @@
+.HomePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 1em;
+}
+.ChatWindow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  height: 100%;
+  max-width: 85%;
+  padding: 0.5em;
+}
+
+.NewsGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson;
+  padding: 4em;
+}
+
+.Row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  padding: 5em;
+  background-color: greenyellow;
+}
+
+.Reference {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: seagreen;
+  padding: 1em;
+}
+
+.Reference div {
+  text-align: center;
+  padding: 2em;
+  margin: 0.25em;
+  width: 100%;
+  background-color: darkkhaki;
+}
+
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12%;
+  min-width: 85%;
+  background-color: chartreuse;
+  margin: 0 0 0.5em 0;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8%;
+  min-width: 85%;
+  background-color: lightcoral;
+  margin: 0 0 0.5em 0;
+}
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8%;
+  min-width: 85%;
+  background-color: burlywood;
+  margin: 0.5em 0 0 0;
+}
+
+@media all and (max-width: 775px) {
+  .HomePage {
+    padding: 0.75em;
+  }
+  .ChatWindow {
+    width: 99%;
+  }
+  .Header {
+    width: 99%;
+  }
+  .NavBar {
+    width: 99%;
+  }
+}
+@media all and (max-width: 650px) {
+  .NavBar {
+    display: none;
+  }
+}
+@media all and (max-width: 450px) {
+  .HomePage {
+    padding: 5px;
+  }
+  .ChatWindow {
+    width: 100%;
+  }
+  .Header {
+    width: 100%;
+  }
+  .Footer {
+    width: 100%;
+  }
+}
