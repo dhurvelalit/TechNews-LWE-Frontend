@@ -32,7 +32,7 @@ export default function SideBarCard() {
             <img src={Pic} alt="" className={classes.img} />
           </Grid>
           <Grid item sm={12}>
-            <Typography variant="body" component="p" align="center">
+            <Typography variant="body1" component="p" align="center">
               side bar link
             </Typography>
           </Grid>
