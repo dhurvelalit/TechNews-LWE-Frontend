@@ -5,10 +5,10 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
-import Logo from "@material-ui/icons/Home";
 import Insta from "@material-ui/icons/Instagram";
 import YT from "@material-ui/icons/YouTube";
 import Twitter from "@material-ui/icons/Twitter";
+import TechNewsDrawer from "../drawer/drawer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     width: "100%",
     top: 0,
+  },
+
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
   },
 
   logo: {
@@ -42,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    marginLeft: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(3),
+    },
   },
 }));
 
@@ -54,9 +62,8 @@ const TechNewsAppBar = ({ drawerOpen, setDrawerOpen }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolBar}>
-          <Logo className={classes.logo} />
           <Typography className={classes.title} variant="h5" noWrap>
             Tech News Online
           </Typography>
@@ -95,6 +102,7 @@ const TechNewsAppBar = ({ drawerOpen, setDrawerOpen }) => {
           </IconButton>
         </Toolbar>
       </AppBar>
+      <TechNewsDrawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
     </div>
   );
 };
