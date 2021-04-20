@@ -2,37 +2,43 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-// import Typography from "@material-ui/core/Typography";
-// import ButtonBase from "@material-ui/core/ButtonBase";
-import { Image } from "@material-ui/icons";
-import Pic from "./image.jpg";
+import NewsCard from "../../components/newsCards/card";
+import PreviousNewsCard from "../../components/newsCards/previousNewsCard";
+import SideBarCard from "../../components/sideBar/sideBarCard";
+import { GridList, GridListTile } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing(2),
     marginTop: theme.spacing(12),
+    zIndex: theme.zIndex.drawer - 1,
   },
-  paper: {
+  newsArticles: {
     width: "100%",
-    padding: theme.spacing(1),
-    borderRadius: 12,
-    backgroundColor: "lightGreen",
+    height: "80vh",
+    overflow: "auto",
+    padding: theme.spacing(2),
+    borderRadius: "0.5em",
   },
-
-  Image: {
-    alignItems: "center",
-    padding: theme.spacing(1),
-    borderRadius: 8,
-    backgroundColor: "lightBlue",
-    color: theme.palette.text.secondary,
+  sideBar: {
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
+      width: "100%",
+      height: "80vh",
+      overflow: "auto",
+      padding: theme.spacing(2),
+      borderRadius: "0.5em",
+    },
   },
-  img: {
-    margin: "auto",
-    display: "block",
-    maxWidth: "100%",
-    maxHeight: "100%",
+  gridList: {
+    flexWrap: "nowrap",
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: "translateZ(0)",
+    [theme.breakpoints.up("sm")]: { display: "none" },
   },
+  tile: {},
 }));
 
 export default function NewsItems() {
@@ -40,59 +46,95 @@ export default function NewsItems() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper} elevation={6}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={9}>
+          <Paper className={classes.newsArticles} elevation={8}>
             <Grid container spacing={2}>
-              <Grid item xs={4}>
-                image
+              <Grid item xs={12}>
+                Today's News
               </Grid>
-              <Grid item xs={8}>
-                dignissimos exercitationem placeat. Similique sunt minus dolor
-                in! Quidem, maxime quod?
+              <Grid item xs={12} sm={6}>
+                <NewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <NewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <NewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <NewsCard />
+              </Grid>
+              <Grid item xs={12}>
+                Previous News
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <PreviousNewsCard />
               </Grid>
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper} elevation={6}>
+        <Grid item xs={12} sm={3}>
+          <Paper className={classes.sideBar} elevation={8}>
             <Grid container spacing={2}>
-              <Grid item xs={6} sm={12}>
-                <Paper className={classes.Image} elevation={0}>
-                  <img src={Pic} alt="temp" className={classes.img}></img>
-                </Paper>
+              <Grid item xs={12}>
+                <SideBarCard />
               </Grid>
-              <Grid item xs={6} sm={12}>
-                News Title
+              <Grid item xs={12}>
+                <SideBarCard />
+              </Grid>
+              <Grid item xs={12}>
+                <SideBarCard />
+              </Grid>
+              <Grid item xs={12}>
+                <SideBarCard />
+              </Grid>
+              <Grid item xs={12}>
+                <SideBarCard />
               </Grid>
             </Grid>
           </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper} elevation={6}>
-            <Grid container spacing={2}>
-              <Grid item xs={4}>
-                image
-              </Grid>
-              <Grid item xs={8}>
-                dignissimos exercitationem placeat. Similique sunt minus dolor
-                in! Quidem, maxime quod?
-              </Grid>
-            </Grid>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper} elevation={6}>
-            <Grid container spacing={2}>
-              <Grid item xs={4}>
-                image
-              </Grid>
-              <Grid item xs={8}>
-                dignissimos exercitationem placeat. Similique sunt minus dolor
-                in! Quidem, maxime quod?
-              </Grid>
-            </Grid>
-          </Paper>
+          <GridList className={classes.gridList} align={"center"} spacing={2}>
+            <GridListTile className={classes.tile}>
+              <SideBarCard />
+            </GridListTile>
+            <GridListTile className={classes.tile}>
+              <SideBarCard />
+            </GridListTile>
+            <GridListTile className={classes.tile}>
+              <SideBarCard />
+            </GridListTile>
+            <GridListTile className={classes.tile}>
+              <SideBarCard />
+            </GridListTile>
+            <GridListTile className={classes.tile}>
+              <SideBarCard />
+            </GridListTile>
+            <GridListTile className={classes.tile}>
+              <SideBarCard />
+            </GridListTile>
+          </GridList>
         </Grid>
       </Grid>
     </div>
