@@ -5,45 +5,27 @@ import CardContent from "@material-ui/core/CardContent";
 import Pic from "../../assets/images/image.jpg";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import PreviousNewsCard from "../../components/newsCards/previousNewsCard";
+import PreviousNewsCard from "../newsCards/previousNewsCard";
 
 const useStyles = makeStyles((theme) => ({
   card: {
     borderRadius: "0.5em",
-    margin: theme.spacing(2),
-    marginTop: theme.spacing(13.5),
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.up("sm")]: {
-      maxWidth: "80%",
-      margin: "auto",
-      marginTop: theme.spacing(13.5),
-      marginBottom: theme.spacing(4),
-    },
+    maxHeight: "80vh",
+    overflow: "auto",
   },
   img: {
     margin: "auto",
     display: "block",
     maxWidth: "100%",
     [theme.breakpoints.up("sm")]: {
-      maxWidth: "60%",
+      maxWidth: "80%",
     },
   },
   content: {
     padding: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      maxWidth: "90%",
-      margin: "auto",
-      padding: theme.spacing(2, 4),
-    },
   },
   related: {
-    padding: theme.spacing(2),
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.up("sm")]: {
-      maxWidth: "90%",
-      margin: "auto",
-      marginBottom: theme.spacing(4),
-    },
+    marginTop: theme.spacing(4),
   },
 }));
 const NewsArticle = () => {
@@ -146,7 +128,7 @@ const NewsArticle = () => {
         </CardContent>
       </Card>
       <div className={classes.related}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} alignItems={"center"}>
           <Grid item xs={12}>
             Checkout Similar News
           </Grid>

@@ -1,15 +1,13 @@
 import { React, useState } from "react";
 import TechNewsAppBar from "../../components/appBar/appBar";
-import NewsArticle from "./newsArticle";
-// import NewsItems from "./newsItems";
+import DefaultLayout from "./defaultLayout";
 
 const HomePage = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   return (
     <div>
       <TechNewsAppBar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
-      {/* <NewsItems /> */}
-      <NewsArticle />
+      <DefaultLayout />
     </div>
   );
 };
